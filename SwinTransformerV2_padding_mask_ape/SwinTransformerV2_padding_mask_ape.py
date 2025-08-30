@@ -658,8 +658,8 @@ class SwinTransformerV2(nn.Module):
         attn_drop_rate (float): Attention dropout rate. Default: 0
         drop_path_rate (float): Stochastic depth rate. Default: 0.1
         norm_layer (nn.Module): Normalization layer. Default: nn.LayerNorm.
-        #ape (bool): If True, add absolute position embedding to the patch embedding. Default: False
-        rpe (bool): If True, add relative position encoding to the patch embedding. Default: False
+        ape (bool): If True, add absolute position embedding to the patch embedding. Default: False
+        #rpe (bool): If True, add relative position encoding to the patch embedding. Default: False
         patch_norm (bool): If True, add normalization after patch embedding. Default: True
         use_checkpoint (bool): Whether to use checkpointing to save memory. Default: False
         pretrained_window_sizes (tuple(int)): Pretrained window sizes of each layer.
@@ -790,3 +790,4 @@ class SwinTransformerV2(nn.Module):
         flops += self.num_features * self.patches_resolution[0] * self.patches_resolution[1] // (2 ** self.num_layers)
         flops += self.num_features * self.num_classes
         return flops
+
